@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 1031581031}
   - component: {fileID: 1031581030}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: RearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 1673170109}
   - component: {fileID: 1673170108}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: RearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
