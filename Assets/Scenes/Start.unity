@@ -342,7 +342,7 @@ Prefab:
     - target: {fileID: 64419396491387728, guid: 31753400b93539340a3b708d551df585,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 64937243683916746, guid: 31753400b93539340a3b708d551df585,
         type: 2}
@@ -372,6 +372,36 @@ Prefab:
     - target: {fileID: 64354947483651924, guid: 31753400b93539340a3b708d551df585,
         type: 2}
       propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64354947483651924, guid: 31753400b93539340a3b708d551df585,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64072400131886078, guid: 31753400b93539340a3b708d551df585,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64193383039070978, guid: 31753400b93539340a3b708d551df585,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64937243683916746, guid: 31753400b93539340a3b708d551df585,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64662613986005376, guid: 31753400b93539340a3b708d551df585,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64063472632688030, guid: 31753400b93539340a3b708d551df585,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
