@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float yawRate;
-    //public float assentRate;
     public float speed;
     public float forwardRotate;
     public float sideSlipRotate;
@@ -21,10 +20,8 @@ public class PlayerController : MonoBehaviour
     private void Start ()
     {
         _droneRBody = GetComponent<Rigidbody>();
-        _droneRotation = _droneRBody.rotation;
 
         yawRate = 60.0f;
-        //assentRate = 9.0f;
         speed = 18.0f;
         forwardRotate = 12.0f;
         sideSlipRotate = 12.0f;
