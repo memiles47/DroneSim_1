@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Public Variables
     public float yawRate;
     public float speed;
     public float forwardRotate;
     public float sideSlipRotate;
     public float forwardTilt;
     public float sideTilt;
-    private Rigidbody _droneRBody;
-    private Quaternion _droneRotation;
-
     public float zRotate;
     public float xRotate;
 
-    // Use this for initialization
+    // Private Variables
+    private Rigidbody _droneRBody;
+    private Quaternion _droneRotation;
+
+
     private void Start ()
     {
+        // Initiate Variables
         _droneRBody = GetComponent<Rigidbody>();
 
         yawRate = 60.0f;
@@ -27,9 +30,9 @@ public class PlayerController : MonoBehaviour
         sideSlipRotate = 12.0f;
     }
     
-    // Update is called once per frame
     private void Update ()
     {
+        // Initiate Variables for checking within game
         var horizontalAxis = Input.GetAxis("Horizontal");
         var verticalAxis = Input.GetAxis("Vertical");
         var rStickX = Input.GetAxis("T1s_RStick-X");
