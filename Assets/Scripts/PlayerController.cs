@@ -22,6 +22,17 @@ public class PlayerController : MonoBehaviour
     private void Start ()
     {
         // Initiate Variables
+        //_droneRBody = GetComponent<Rigidbody>();
+
+        //yawRate = 60.0f;
+        //speed = 18.0f;
+        //forwardRotate = 12.0f;
+        //sideSlipRotate = 12.0f;
+    }
+
+    private void Awake()
+    {
+        // Initiate Variables
         _droneRBody = GetComponent<Rigidbody>();
 
         yawRate = 60.0f;
