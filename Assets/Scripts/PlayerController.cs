@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     // Private Variables
     private Rigidbody _droneRBody;
-    private Quaternion _droneRotation;
 
 
     private void Start ()
@@ -27,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
         yawRate = 60.0f;
         speed = 18.0f;
+        tiltAngle = 25.0f;
+        smoothTilt = 10.0f;
     }
     
     private void Update ()
@@ -40,10 +39,19 @@ public class PlayerController : MonoBehaviour
         //xRotate = rStickY;
         //zRotate = rStickX;
 
-        Vector3 movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * speed * Time.deltaTime);
+        var movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * speed * Time.deltaTime);
         _droneRBody.MovePosition(transform.position + movement);
 
         //Quaternion rotation = Quaternion.Euler(new Vector3(0, horizontalAxis, 0) * yawRate * Time.deltaTime);
         transform.Rotate(new Vector3(0, horizontalAxis, 0), yawRate * Time.deltaTime);
+
+        // Smoothly tilts a transform towards a target rotation.
+        var tiltAroundZ = Input.GetAxis("T1s_RStick-X") * tiltAngle * -1;
+        var tiltAroundX = Input.GetAxis("T1s_RStick-Y") * tiltAngle;
+
+        var target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+
+        // Dampen towards the target rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smoothTilt);
     }
 }
