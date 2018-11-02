@@ -36,9 +36,6 @@ public class PlayerController : MonoBehaviour
         var rStickX = Input.GetAxis("T1s_RStick-X");
         var rStickY = Input.GetAxis("T1s_RStick-Y");
 
-        //xRotate = rStickY;
-        //zRotate = rStickX;
-
         var movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * speed * Time.deltaTime);
         _droneRBody.MovePosition(transform.position + movement);
 
