@@ -2,14 +2,14 @@
 
 public class PlayerController : MonoBehaviour
 {
-    // Public Variables
-    public float yawRate;
-    public float speed;
-    public float tiltAngle;
-    public float smoothTilt;
+    // Declare Public Variables
+    private const float YawRate = 60.0f;
+    private const  float Speed = 18.0f;
+    private const float TiltAngle = 25.0f;
+    private const float SmoothTilt = 10.0f;
     public bool enableTilt;
 
-    // Private Variables
+    // Declare Private Variables
     private Rigidbody _droneRBody;
 
 
@@ -23,10 +23,6 @@ public class PlayerController : MonoBehaviour
         // Initiate Variables
         _droneRBody = GetComponent<Rigidbody>();
 
-        yawRate = 60.0f;
-        speed = 18.0f;
-        tiltAngle = 25.0f;
-        smoothTilt = 10.0f;
         enableTilt = false;
     }
     
@@ -38,24 +34,22 @@ public class PlayerController : MonoBehaviour
         var rStickX = Input.GetAxis("T1s_RStick-X");
         var rStickY = Input.GetAxis("T1s_RStick-Y");
 
-        var movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * speed * Time.deltaTime);
+        var movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * Speed * Time.deltaTime);
         _droneRBody.MovePosition(transform.position + movement);
 
+        //Quaternion rotation = Quaternion.Euler(new Vector3(0, horizontalAxis, 0) * yawRate * Time.deltaTime);
+        transform.Rotate(new Vector3(0, horizontalAxis, 0), YawRate * Time.deltaTime);
 
         if (enableTilt)
         {
-            //Quaternion rotation = Quaternion.Euler(new Vector3(0, horizontalAxis, 0) * yawRate * Time.deltaTime);
-            transform.Rotate(new Vector3(0, horizontalAxis, 0), yawRate * Time.deltaTime);
-
-
             // Smoothly tilts a transform towards a target rotation.
-            var tiltAroundZ = Input.GetAxis("T1s_RStick-X") * tiltAngle * -1;
-            var tiltAroundX = Input.GetAxis("T1s_RStick-Y") * tiltAngle;
+            var tiltAroundZ = Input.GetAxis("T1s_RStick-X") * TiltAngle * -1;
+            var tiltAroundX = Input.GetAxis("T1s_RStick-Y") * TiltAngle;
 
             var target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
 
             // Dampen towards the target rotation
-            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smoothTilt);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * SmoothTilt);
         }
     }
 }
