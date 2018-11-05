@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+// ReSharper disable once UnusedMember.Global
+// ReSharper disable once CheckNamespace
 public class PlayerController : MonoBehaviour
 {
     // Declare Public Variables
@@ -13,11 +15,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _droneRBody;
 
 
+    // ReSharper disable once UnusedMember.Local
     private void Start ()
     {
 
     }
 
+    // ReSharper disable once UnusedMember.Local
     private void Awake()
     {
         // Initiate Variables
@@ -26,6 +30,7 @@ public class PlayerController : MonoBehaviour
         enableTilt = false;
     }
     
+    // ReSharper disable once UnusedMember.Local
     private void Update ()
     {
         // Initiate Variables for checking within game
