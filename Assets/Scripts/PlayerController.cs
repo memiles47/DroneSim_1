@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     // Declare Public Variables
     private const float YawRate = 60.0f;
     private const float Speed = 18.0f;
-    private float TiltAngle = 25.0f;
+    private const float TiltAngle = 25.0f;
     private float SmoothTilt = 10.0f;
     public bool enableTilt;
 
