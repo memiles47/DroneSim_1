@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
         //Quaternion rotation = Quaternion.Euler(new Vector3(0, horizontalAxis, 0) * yawRate * Time.deltaTime);
         transform.Rotate(new Vector3(0, horizontalAxis, 0), YawRate * Time.deltaTime);
 
+        #region Tilt2
+
         if (enableTilt)
         {
             // Smoothly tilts a transform towards a target rotation.
@@ -56,5 +58,13 @@ public class PlayerController : MonoBehaviour
             // Dampen towards the target rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * SmoothTilt);
         }
+
+        #endregion
+
+        #region Tilt2
+
+        //Tilt with rotate option
+
+        #endregion
     }
 }
