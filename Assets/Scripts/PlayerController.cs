@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private const float Speed = 18.0f;
     private const float TiltAngle = 25.0f;
     private float SmoothTilt = 10.0f;
-    public bool enableTilt;
+    public bool enableTilt1;
+    public bool enableTilt2;
 
     // Declare Private Variables
     private Rigidbody _droneRBody;
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
         // Initiate Variables
         _droneRBody = GetComponent<Rigidbody>();
 
-        enableTilt = false;
+        enableTilt1 = false;
     }
     
     // ReSharper disable once UnusedMember.Local
