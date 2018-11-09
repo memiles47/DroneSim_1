@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private const float TiltAngle = 25.0f;
     private float SmoothTilt = 10.0f;
     public bool enableTilt1;
-    public bool enableTilt2;
+    public bool enableTilt2 = true;
 
     // Declare Private Variables
     private Rigidbody _droneRBody;
@@ -27,8 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         // Initiate Variables
         _droneRBody = GetComponent<Rigidbody>();
-
-        enableTilt1 = false;
+        
     }
     
     // ReSharper disable once UnusedMember.Local
@@ -39,6 +38,15 @@ public class PlayerController : MonoBehaviour
         var verticalAxis = Input.GetAxis("Vertical");
         var rStickX = Input.GetAxis("T1s_RStick-X");
         var rStickY = Input.GetAxis("T1s_RStick-Y");
+
+        if (!enableTilt1 & !enableTilt2)
+        {
+            enableTilt2 = true;
+        }
+        else if (enableTilt1)
+        {
+            enableTilt2 = false;
+        }
 
         var movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * Speed * Time.deltaTime);
         _droneRBody.MovePosition(transform.position + movement);
