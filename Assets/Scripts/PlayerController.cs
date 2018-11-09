@@ -46,9 +46,9 @@ public class PlayerController : MonoBehaviour
         //Quaternion rotation = Quaternion.Euler(new Vector3(0, horizontalAxis, 0) * yawRate * Time.deltaTime);
         transform.Rotate(new Vector3(0, horizontalAxis, 0), YawRate * Time.deltaTime);
 
-        #region Tilt2
+        #region Tilt1
 
-        if (enableTilt)
+        if (enableTilt1)
         {
             // Smoothly tilts a transform towards a target rotation.
             var tiltAroundZ = Input.GetAxis("T1s_RStick-X") * TiltAngle * -1;
