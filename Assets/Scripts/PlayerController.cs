@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         var rStickX = Input.GetAxis("T1s_RStick-X");
         var rStickY = Input.GetAxis("T1s_RStick-Y");
 
+        //Tilt Switch for testing
         if (!enableTilt1 & !enableTilt2)
         {
             enableTilt2 = true;
