@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
         var rStickX = Input.GetAxis("T1s_RStick-X");
         var rStickY = Input.GetAxis("T1s_RStick-Y");
 
-        //Tilt Switch for testing
+        #region Tilt Switch
+
         if (!enableTilt1 & !enableTilt2)
         {
             enableTilt2 = true;
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
         {
             enableTilt2 = false;
         }
+
+        #endregion
 
         var movement = transform.TransformDirection(new Vector3(rStickX, verticalAxis, rStickY) * Speed * Time.deltaTime);
         _droneRBody.MovePosition(transform.position + movement);
