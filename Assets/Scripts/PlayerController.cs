@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
         #region Tilt2
 
         //Tilt with rotate option, tilt angle * X Axis input
+        //Having doubts about this variation
         //transform.Rotate(new Vector3(0, horizontalAxis, TiltAngle * rStickX), YawRate * Time.deltaTime);
 
         #endregion
