@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
         _droneRBody = GetComponent<Rigidbody>();
         
     }
-    
-    // ReSharper disable once UnusedMember.Local
     private void Update ()
     {
         // Initiate Variables for checking within game
