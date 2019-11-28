@@ -44,3 +44,13 @@ The following packages were added:
   com.unity.modules.androidjni@1.0.0
 The following packages were updated:
   com.unity.package-manager-ui from version 2.1.2 to 2.2.0
+
+=== Sun Nov 17 17:27:51 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.timeline@1.1.0
+  com.unity.multiplayer-hlapi@1.0.2
+  com.unity.xr.legacyinputhelpers@2.0.2
